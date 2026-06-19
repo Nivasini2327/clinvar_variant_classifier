@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variant Pathogenicity Predictor</title>
+    
+    <!-- Importing Google Fonts for cleaner typography (Inter for UI, Fira Code for text input) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Link to our external CSS file for styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Wrapper Container -->
+    <div class="container">
+        <!-- Header Section: Logo, Title, and Subtitle -->
+        <div class="header">
+            <div class="header-title-container">
+                <div class="logo-box">
+                    <!-- Icon representing genetic variants / DNA activity -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 22 22 4"/>
+                        <circle cx="9" cy="15" r="1.5"/>
+                        <circle cx="15" cy="9" r="1.5"/>
+                        <path d="m5 13 4 4"/>
+                        <path d="m11 5 4 4"/>
+                    </svg>
+                </div>
+                <h1>Variant Pathogenicity Predictor</h1>
+            </div>
+            <p class="subtitle">Predict whether genomic variants are pathogenic or benign. Paste VCF data or upload a file below.</p>
+        </div>
+
+        <!-- Main Input Card Section -->
+        <div class="card">
+            <!-- Card Header: Input Title and Helper Buttons (Load, Upload) -->
+            <div class="card-header">
+                <h2>VCF Input</h2>
+                <div class="actions">
+                    <!-- Button to load mock data -->
+                    <button class="action-btn" id="load-example-btn">
+                        <i data-lucide="file-text"></i>
+                        Load Example
+                    </button>
+                    <!-- Button to trigger file upload -->
+                    <button class="action-btn" id="upload-btn">
+                        <i data-lucide="upload"></i>
+                        Upload File
+                    </button>
+                    <!-- Hidden file input triggered by the upload button above -->
+                    <input type="file" id="file-input" accept=".vcf,.txt" style="display: none;">
+                </div>
+            </div>
+
+            <!-- VCF Data Input Area -->
+            <div class="textarea-wrapper">
+                <textarea id="vcf-input" spellcheck="false" placeholder="Enter VCF data here...">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+chr1	12345	rs123	A	G	30	PASS	DP=100</textarea>
+            </div>
+
+            <!-- Main Call-to-Action Submit Button -->
+            <button class="submit-btn" id="predict-btn">
+                Predict Pathogenicity
+            </button>
+        </div>
+    </div>
+
+    <!-- Script to load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Link to our external JavaScript file for interactivity -->
+    <script src="script.js"></script>
+</body>
+</html>
